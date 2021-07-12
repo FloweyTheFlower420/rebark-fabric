@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
-  "version": "${version}",
+  "id": "rebark",
+  "version": "1.0",
 
-  "name": "Example Mod",
+  "name": "ReBark",
   "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
-    "Me!"
+    "FloweyTF"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://floweytf.com/",
+    "sources": "https://github.com/FloweyTheFlower420/rebark-fabric"
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/rebark/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "com.floweytf.rebark.RebarkMain"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "rebark.mixins.json"
   ],
 
   "depends": {
