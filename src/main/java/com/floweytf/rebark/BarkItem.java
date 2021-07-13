@@ -18,10 +18,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class BarkItem extends Item {
-    private static final Map<Block, Block> UNSTRIP = AxeItemAccessor.getStrip().entrySet()
-        .stream()
-        .collect(Collectors.toMap(Map.Entry::getValue, Map.Entry::getKey));
-
+    public static Map<Block, Block> UNSTRIP = null;
     public BarkItem(Properties properties) {
         super(properties);
     }
