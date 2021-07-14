@@ -1,12 +1,10 @@
 package com.floweytf.rebark;
 
-import com.floweytf.rebark.mixin.AxeItemAccessor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
@@ -15,7 +13,6 @@ import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class BarkItem extends Item {
     public static Map<Block, Block> UNSTRIP = null;
