@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "id": "rebark",
-  "version": "1.0",
+  "version": "1.2",
 
   "name": "ReBark",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "Don't you hate it when you accidentally strip logs, and have no way to replace it? This mod is for you! Inspired by a datapack, this is now a full mod!",
   "authors": [
     "FloweyTF"
   ],
