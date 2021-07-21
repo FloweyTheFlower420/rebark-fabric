@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "rebark",
-  "version": "1.2",
+  "version": "1.3.1",
 
   "name": "ReBark",
   "description": "Don't you hate it when you accidentally strip logs, and have no way to replace it? This mod is for you! Inspired by a datapack, this is now a full mod!",
@@ -13,11 +13,14 @@
     "sources": "https://github.com/FloweyTheFlower420/rebark-fabric"
   },
 
-  "license": "CC0-1.0",
+  "license": "MIT",
   "icon": "assets/rebark/icon.png",
 
   "environment": "*",
   "entrypoints": {
+    "client": [
+      "com.floweytf.rebark.RebarkClient"
+    ],
     "main": [
       "com.floweytf.rebark.RebarkMain"
     ]

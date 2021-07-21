@@ -44,6 +44,8 @@ jar {
 	}
 }
 
+jar.finalizedBy(remapJar)
+
 publishing {
 	publications {
 		mavenJava(MavenPublication) {
