@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 public class RebarkMain implements ModInitializer {
     public static final Item BARK = new BarkItem(new FabricItemSettings().tab(CreativeModeTab.TAB_MISC));
     public static final String MODID = "rebark";
+
     @Override
     public void onInitialize() {
         Registry.register(Registry.ITEM, new ResourceLocation(MODID, "bark"), BARK);
