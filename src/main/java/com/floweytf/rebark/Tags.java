@@ -20,7 +20,7 @@ public class Tags {
 
     public static boolean validateRebark(Block block) {
         boolean passWhitelist;
-        if(Registry.BLOCK.getTag(REBARK_WHITELIST_TAG).get().size() == 0) // whitelist isn't used
+        if(Registry.BLOCK.getTag(REBARK_WHITELIST_TAG).map((e) -> e.size() == 0).orElse(true)) // whitelist isn't used
             passWhitelist = true;
         else
             passWhitelist = block.builtInRegistryHolder().is(REBARK_WHITELIST_TAG);
@@ -29,7 +29,7 @@ public class Tags {
 
     public static boolean validateStrip(Block block) {
         boolean passWhitelist;
-        if(Registry.BLOCK.getTag(STRIP_WHITELIST_TAG).get().size() == 0) // whitelist isn't used
+        if(Registry.BLOCK.getTag(REBARK_WHITELIST_TAG).map((e) -> e.size() == 0).orElse(true)) // whitelist isn't used
             passWhitelist = true;
         else
             passWhitelist = block.builtInRegistryHolder().is(STRIP_WHITELIST_TAG);
