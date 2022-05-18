@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "rebark",
-  "version": "1.3.2",
+  "version": "${version}",
 
   "name": "ReBark",
   "description": "Don't you hate it when you accidentally strip logs, and have no way to replace it? This mod is for you! Inspired by a datapack, this is now a full mod!",
