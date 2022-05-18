@@ -5,6 +5,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
