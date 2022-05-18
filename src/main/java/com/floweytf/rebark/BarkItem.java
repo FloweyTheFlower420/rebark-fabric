@@ -29,6 +29,8 @@ public class BarkItem extends Item {
         Block block = blockstate.getBlock();
         if(!UNSTRIP.containsKey(block))
             return InteractionResult.PASS;
+        if(!Tags.validateRebark(UNSTRIP.get(block)))
+            return InteractionResult.FAIL;
         Block output = UNSTRIP.get(block);
         BlockState outputState = output.defaultBlockState().setValue(
             RotatedPillarBlock.AXIS,
