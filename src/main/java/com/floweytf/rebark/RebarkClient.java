@@ -2,7 +2,6 @@ package com.floweytf.rebark;
 
 import com.floweytf.rebark.mixin.AxeItemAccessor;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 
 import java.util.Map;

@@ -18,10 +18,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(AxeItem.class)
 public class AxeItemMixin {
-    @Inject(at = @At(value = "FIELD", target="Lnet/minecraft/sounds/SoundEvents;AXE_STRIP:Lnet/minecraft/sounds/SoundEvent;", opcode = Opcodes.GETSTATIC),
+    @Inject(at = @At(value = "FIELD", target = "Lnet/minecraft/sounds/SoundEvents;AXE_STRIP:Lnet/minecraft/sounds/SoundEvent;", opcode = Opcodes.GETSTATIC),
         method = "useOn(Lnet/minecraft/world/item/context/UseOnContext;)Lnet/minecraft/world/InteractionResult;")
     private void onUseMixin(UseOnContext useOnContext, CallbackInfoReturnable<InteractionResult> cir) {
-        if(!Tags.validateStrip(useOnContext.getLevel().getBlockState(useOnContext.getClickedPos()).getBlock()))
+        if (!Tags.validateStrip(useOnContext.getLevel().getBlockState(useOnContext.getClickedPos()).getBlock()))
             return;
         ItemStack heldItem = useOnContext.getItemInHand();
         Player player = useOnContext.getPlayer();

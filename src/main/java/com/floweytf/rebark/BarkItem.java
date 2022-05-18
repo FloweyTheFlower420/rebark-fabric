@@ -16,6 +16,7 @@ import java.util.Map;
 
 public class BarkItem extends Item {
     public static Map<Block, Block> UNSTRIP = null;
+
     public BarkItem(Properties properties) {
         super(properties);
     }
@@ -27,9 +28,9 @@ public class BarkItem extends Item {
         BlockState blockstate = world.getBlockState(blockpos);
 
         Block block = blockstate.getBlock();
-        if(!UNSTRIP.containsKey(block))
+        if (!UNSTRIP.containsKey(block))
             return InteractionResult.PASS;
-        if(!Tags.validateRebark(UNSTRIP.get(block)))
+        if (!Tags.validateRebark(UNSTRIP.get(block)))
             return InteractionResult.FAIL;
         Block output = UNSTRIP.get(block);
         BlockState outputState = output.defaultBlockState().setValue(
