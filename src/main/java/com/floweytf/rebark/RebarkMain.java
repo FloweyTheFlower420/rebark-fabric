@@ -10,8 +10,11 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 
+import java.util.AbstractMap;
 import java.util.Map;
 import java.util.stream.Collectors;
+
+import static com.floweytf.rebark.RebarkClient.blockToId;
 
 public class RebarkMain implements ModInitializer {
     public static final Item BARK = new BarkItem(new FabricItemSettings().tab(CreativeModeTab.TAB_MISC));
@@ -25,7 +28,9 @@ public class RebarkMain implements ModInitializer {
             if (BarkItem.UNSTRIP == null) {
                 BarkItem.UNSTRIP = AxeItemAccessor.getStrip().entrySet()
                     .stream()
-                    .collect(Collectors.toMap(Map.Entry::getValue, Map.Entry::getKey));
+                    .map((e) -> new AbstractMap.SimpleImmutableEntry<>(blockToId(e.getKey()), blockToId(e.getValue())))
+                    .peek((e) -> System.out.printf("normal: %s     -     stripped: %s\n", e.getKey().toString(), e.getValue().toString()))
+                    .collect(Collectors.toMap(Map.Entry::getValue, Map.Entry::getKey, (prev, curr) -> prev));
             }
         });
     }

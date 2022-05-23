@@ -1,6 +1,7 @@
 package com.floweytf.rebark;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
@@ -15,7 +16,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import java.util.Map;
 
 public class BarkItem extends Item {
-    public static Map<Block, Block> UNSTRIP = null;
+    public static Map<ResourceLocation, ResourceLocation> UNSTRIP = null;
     public BarkItem(Properties properties) {
         super(properties);
     }
@@ -27,11 +28,11 @@ public class BarkItem extends Item {
         BlockState blockstate = world.getBlockState(blockpos);
 
         Block block = blockstate.getBlock();
-        if(!UNSTRIP.containsKey(block))
+        if(!UNSTRIP.containsKey(RebarkClient.blockToId(block)))
             return InteractionResult.PASS;
-        if(!Tags.validateRebark(UNSTRIP.get(block)))
+        if(!Tags.validateRebark(RebarkClient.map(block)))
             return InteractionResult.FAIL;
-        Block output = UNSTRIP.get(block);
+        Block output = RebarkClient.map(block);
         BlockState outputState = output.defaultBlockState().setValue(
             RotatedPillarBlock.AXIS,
             blockstate.getValue(RotatedPillarBlock.AXIS)
