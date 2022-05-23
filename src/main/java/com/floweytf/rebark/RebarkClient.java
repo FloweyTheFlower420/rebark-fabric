@@ -14,7 +14,7 @@ public class RebarkClient implements ClientModInitializer {
             if (BarkItem.UNSTRIP == null) {
                 BarkItem.UNSTRIP = AxeItemAccessor.getStrip().entrySet()
                     .stream()
-                    .collect(Collectors.toMap(Map.Entry::getValue, Map.Entry::getKey));
+                    .collect(Collectors.toMap(Map.Entry::getValue, Map.Entry::getKey, (prev, curr) -> prev));
             }
         });
     }
